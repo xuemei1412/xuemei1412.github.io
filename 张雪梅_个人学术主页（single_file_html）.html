@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>张雪梅 · 个人学术主页</title>
+  <meta name="description" content="张雪梅（清华大学地球系统科学系博士研究生）个人学术主页：研究方向、论文、项目、专利、荣誉、联系方式。" />
+  <style>
+    /* —— 仅在“第一版完整结构”的基础上，统一改为清华紫主题 —— */
+    :root {
+      --bg: #f6f4ff;               /* 背景浅紫 */
+      --card: #ffffff;             /* 卡片白 */
+      --text: #1b1640;             /* 正文深蓝紫 */
+      --muted: #635a8b;            /* 次级文字 */
+      --brand: #6d3df5;            /* 清华紫 */
+      --brand-2: #4a27c8;          /* 深清华紫 */
+      --ok: #22c55e;
+      --link: #3b46d7;
+      --shadow: 0 10px 28px rgba(58,52,119,.14);
+      --radius: 18px;
+    }
+    [data-theme="dark"]{
+      --bg: #120e26;               /* 深色背景（低饱和紫）*/
+      --card: #171334;             /* 深色卡片 */
+      --text: #e9e6ff;             /* 正文浅色 */
+      --muted: #bdb7e6;            /* 次级浅色 */
+      --brand: #a889ff;            /* 亮清华紫 */
+      --brand-2: #cdb8ff;          /* 更亮点缀 */
+      --link: #a6b4ff;
+      --shadow: 0 12px 34px rgba(0,0,0,.35);
+    }
+
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:color-mix(in lab, var(--bg) 82%, transparent);z-index:5;border-bottom:1px solid color-mix(in srgb, var(--brand), transparent 80%)}
+    nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;border:none;box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid color-mix(in srgb, var(--text), var(--bg) 70%)}
+    .btn:hover{filter:brightness(1.05)}
+    .grid{display:grid;gap:22px}
+    @media(min-width:920px){.grid-cols-3{grid-template-columns:280px 1fr;gap:28px}}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .hero{display:grid;gap:22px;align-items:center}
+    @media(min-width:920px){.hero{grid-template-columns:220px 1fr}}
+    .avatar{width:200px;height:200px;border-radius:22px;object-fit:cover;border:3px solid color-mix(in srgb, var(--brand), transparent 70%);box-shadow:0 8px 20px rgba(77,56,175,.18)}
+    h1{font-size:32px;margin:0 0 8px}
+    h2{font-size:22px;margin:0 0 12px}
+    h3{font-size:18px;margin:18px 0 8px}
+    .muted{color:var(--muted)}
+    ul{margin:0;padding-left:18px}
+    .kvs{display:grid;gap:10px}
+    .kv{display:grid;grid-template-columns:108px 1fr;gap:8px}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:color-mix(in srgb, var(--brand), transparent 82%);color:var(--brand-2);border:1px dashed color-mix(in srgb, var(--brand), transparent 50%)}
+    .timeline li{margin-bottom:12px}
+    footer{opacity:.8;padding:36px 0;text-align:center}
+    .section{scroll-margin-top:90px}
+    .pub li{margin:10px 0}
+    .nowrap{white-space:nowrap}
+    .switch{display:inline-flex;gap:8px;align-items:center}
+    .lang-btn{padding:6px 10px;border-radius:10px;border:1px solid color-mix(in srgb, var(--text), var(--bg) 70%);background:transparent;color:var(--text);cursor:pointer}
+    .lang-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="nav-links">
+          <a data-i18n="nav.about" href="#about">关于我</a>
+          <a data-i18n="nav.research" href="#research">研究方向</a>
+          <a data-i18n="nav.edu" href="#edu">教育</a>
+          <a data-i18n="nav.proj" href="#proj">项目</a>
+          <a data-i18n="nav.pubs" href="#pubs">论文</a>
+          <a data-i18n="nav.patent" href="#patent">专利</a>
+          <a data-i18n="nav.honors" href="#honors">荣誉</a>
+          <a data-i18n="nav.contact" href="#contact">联系方式</a>
+        </div>
+        <div class="switch">
+          <button class="btn secondary" id="toggleTheme" aria-label="切换主题">🌓 <span data-i18n="ui.theme">切换主题</span></button>
+          <button class="lang-btn active" data-lang="zh">中</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero 保持第一版完整：头像 + 按钮 -->
+    <section class="hero card section" id="about">
+      <img src="portrait.jpg" alt="张雪梅 头像（请将站点根目录中的 portrait.jpg 替换为你的证件照）" class="avatar" />
+      <div>
+        <h1><span data-i18n="name">张雪梅</span> <span class="tag" data-i18n="title">清华大学 · 博士研究生</span></h1>
+        <p class="muted" data-i18n="dept">地球系统科学系 · 城市碳循环与人工智能生态建模</p>
+        <p data-i18n="intro">研究聚焦城市生态系统碳汇高精度监测与评估，结合多源遥感（星–空–塔–地）与深度学习/大语言模型，构建“AI+生态”数据同化框架，为城市碳中和与生态治理提供量化支撑。</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="mailto:xm-zhang22@mails.tsinghua.edu.cn" data-i18n="btn.mail">✉️ 发送邮件</a>
+          <a class="btn secondary" href="sandbox:/mnt/data/张雪梅_个人简历完整版.docx" data-i18n="btn.cv">⬇️ 下载完整简历（DOCX）</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-3">
+      <!-- 左栏保持第一版：关键信息/技能/社交链接 -->
+      <aside class="card">
+        <h2 data-i18n="key">关键信息</h2>
+        <div class="kvs">
+          <div class="kv"><strong data-i18n="k.email">邮箱</strong><span>xm-zhang22@mails.tsinghua.edu.cn</span></div>
+          <div class="kv"><strong data-i18n="k.phone">电话</strong><span>155 0366 2819</span></div>
+          <div class="kv"><strong data-i18n="k.focus">研究方向</strong><span data-i18n="k.focus.val">城市碳汇 · 遥感反演 · 深度学习 · LLM</span></div>
+          <div class="kv"><strong data-i18n="k.lang">语言</strong><span data-i18n="k.lang.val">英语 CET-6；雅思 6.5</span></div>
+          <div class="kv"><strong data-i18n="k.loc">所在地</strong><span data-i18n="k.loc.val">北京 · 深圳（合作） · 哥本哈根（2025访学）</span></div>
+        </div>
+
+        <h3 data-i18n="skills">技能栈</h3>
+        <ul>
+          <li data-i18n="s.ai">AI/ML：PyTorch、TensorFlow、Scikit‑learn、Hugging Face</li>
+          <li data-i18n="s.models">模型：CNN / LSTM / Transformer、i‑Tree Eco、CASA、LESS、BEPS、DART</li>
+          <li data-i18n="s.rsgis">遥感/GIS：ArcGIS、ENVI、Lidar360、Google Earth Engine</li>
+          <li data-i18n="s.code">编程：Python、R、MATLAB</li>
+        </ul>
+
+        <h3 data-i18n="links">社交/链接</h3>
+        <ul>
+          <li><a href="#" data-i18n="l.scholar">Google Scholar（可后续添加）</a></li>
+          <li><a href="#" data-i18n="l.rg">ResearchGate（可后续添加）</a></li>
+        </ul>
+      </aside>
+
+      <!-- 右栏主体：研究方向保留完整 -->
+      <section class="card section" id="research">
+        <h2 data-i18n="sec.research">研究方向与亮点</h2>
+        <ul class="timeline">
+          <li data-i18n="r.1">构建“星–空–塔–地”一体化城市碳汇观测体系，融合无人机LiDAR与通量塔数据。</li>
+          <li data-i18n="r.2">用 CNN / Transformer 进行树高、冠幅与碳储量精细反演，结合过程模型提升泛化能力。</li>
+          <li data-i18n="r.3">在碳中和实践中评测多GPU（A100/V100/RTX4090）大模型训练性能，并用 LLM 做参数检索与结果解释。</li>
+          <li data-i18n="r.4">资源环境承载力（RECC）与生态系统可替代稳定态（ASS）理论的交叉研究。</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 教育经历 -->
+    <section class="card section" id="edu">
+      <h2 data-i18n="sec.edu">教育经历</h2>
+      <ul class="timeline">
+        <li>
+          <strong data-i18n="edu.tsinghua.name">清华大学 · 地球系统科学系</strong> — <span data-i18n="edu.tsinghua.degree">博士研究生（生态学）</span> <span class="muted">2022.09 – 至今</span><br />
+          <span data-i18n="edu.tsinghua.desc">方向：城市碳汇估算、遥感数据融合、AI碳循环建模；GPA 3.78；导师：徐冰教授。</span>
+        </li>
+        <li>
+          <strong data-i18n="edu.cph.name">哥本哈根大学 · Department of Geosciences and Natural Resource Management (IGN)</strong> — <span data-i18n="edu.cph.degree">联合培养</span> <span class="muted">2025.04 – 2025.10</span><br />
+          <span data-i18n="edu.cph.desc">与 Martin Brandt 教授合作：基于深度学习的城市碳储量遥感反演与数据同化。</span>
+        </li>
+        <li>
+          <strong data-i18n="edu.igsnrr.name">中科院地理科学与资源研究所</strong> — <span data-i18n="edu.igsnrr.degree">硕士（自然地理学）</span> <span class="muted">2019.09 – 2022.06</span><br />
+          <span data-i18n="edu.igsnrr.desc">方向：RECC 与 ASS 理论；导师：赵德顺研究员、于贵瑞研究员；GPA 3.87。</span>
+        </li>
+        <li>
+          <strong data-i18n="edu.sxu.name">山西大学</strong> — <span data-i18n="edu.sxu.degree">学士（地理科学）</span> <span class="muted">2015.09 – 2019.06</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 科研项目与实践 -->
+    <section class="card section" id="proj">
+      <h2 data-i18n="sec.proj">科研项目与实践</h2>
+      <ul class="timeline">
+        <li>
+          <strong data-i18n="p.1.title">国家重点研发计划（2022YFB3903703）</strong> · <span data-i18n="p.1.role">课题3秘书 & 子课题3.4负责人</span> <span class="muted">2022 – 至今</span><br />
+          <span data-i18n="p.1.desc">统筹研究方案与经费；深圳 327 个城市样方 + 无人机 LiDAR；深度学习反演树高/碳储量；建成“星–空–塔–地”观测体系。</span>
+        </li>
+        <li>
+          <strong data-i18n="p.2.title">碳中和实践 · 国家卓越工程师学院</strong> <span class="muted">2023.06 – 08</span><br />
+          <span data-i18n="p.2.desc">负责 AI 模型训练与 GPU 评测；引入 LLM 进行数据解析与参数自动优化。</span>
+        </li>
+        <li>
+          <strong data-i18n="p.3.title">全球变化与生态脆弱区 RECC</strong> <span class="muted">2020 – 2022</span><br />
+          <span data-i18n="p.3.desc">承载力“韧性球”模型与定量评估；成果发表于《应用生态学报》与科学出版社专著。</span>
+        </li>
+        <li>
+          <strong data-i18n="p.4.title">第二次青藏高原综合科学考察</strong> <span class="muted">2019 – 2021</span><br />
+          <span data-i18n="p.4.desc">道路建设对高寒植被影响实验设计与观测；生态干扰与稳定性机理。</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 论文与著作 -->
+    <section class="card section pub" id="pubs">
+      <h2 data-i18n="sec.pubs">论文与著作</h2>
+      <h3 data-i18n="pub.first">第一作者（在审）</h3>
+      <ul>
+        <li data-i18n="pub.a1">张雪梅, 徐冰, Martin Brandt, 王维民 等. <em>城市植被生态系统服务评估及多情景协同效应建模——以深圳为例</em>. <span class="muted">Landscape and Urban Planning, 2025（在审）</span></li>
+      </ul>
+      <h3 data-i18n="pub.rep">代表性论文</h3>
+      <ul>
+        <li data-i18n="pub.r1">宋航, <strong>张雪梅</strong> 等. 基于多源遥感数据的深圳树高季节动态估算. <em>Journal of Remote Sensing</em>, 2025.</li>
+        <li data-i18n="pub.r2">于贵瑞, <strong>张雪梅</strong> 等. 区域资源环境承载力科学概念及其生态基础探讨. <em>应用生态学报</em>, 2022, 33(3): 577–590. DOI:10.13287/j.1001-9332.202203.020.</li>
+        <li data-i18n="pub.r3">赵德顺, <strong>张雪梅</strong> 等. 区域资源环境承载力评价理论与方法. <em>应用生态学报</em>, 2022, 33(3): 591–602. DOI:10.13287/j.1001-9332.202203.024.</li>
+        <li data-i18n="pub.r4">赵德顺, <strong>张雪梅</strong>. 生态系统可替代稳定状态理论综述. <em>生态学报</em>, 2021, 41(16): 6314–6328. DOI:10.5846/stxb202008212178.</li>
+        <li data-i18n="pub.r5">赵德顺 等, <strong>张雪梅</strong>. 气候变化对“山水林田湖草”重大生态工程影响研究. <em>生态学报</em>, 2019, 39(23): 8780–8788. DOI:10.5846/stxb201905291116.</li>
+      </ul>
+      <h3 data-i18n="pub.book">专著</h3>
+      <ul>
+        <li data-i18n="pub.b1">于贵瑞 等, <strong>张雪梅</strong>. <em>全球变化对生态脆弱区资源环境承载力影响研究</em>. 北京：科学出版社, 2023. ISBN 9787030730381。</li>
+      </ul>
+    </section>
+
+    <!-- 专利 -->
+    <section class="card section" id="patent">
+      <h2 data-i18n="sec.patent">专利</h2>
+      <ul>
+        <li data-i18n="pat.1">宋航, <strong>张雪梅</strong>, 徐冰. 一种基于多源遥感与半监督学习的单木实例分割方法. 发明专利申请号：2025100109，清华大学，2025（已提交）。</li>
+      </ul>
+    </section>
+
+    <!-- 荣誉 -->
+    <section class="card section" id="honors">
+      <h2 data-i18n="sec.honors">荣誉与活动</h2>
+      <ul>
+        <li data-i18n="h.1">清华大学研究生单项奖学金——体育优秀奖（2024）</li>
+        <li data-i18n="h.2">碳中和实践二等奖（2024）</li>
+        <li data-i18n="h.3">博士生短期出国访学基金（清华研究生院，2024）</li>
+        <li data-i18n="h.4">ChinaFLUX 第18次通量观测理论与技术培训“优秀学员”（2023）</li>
+        <li data-i18n="h.5">清华地学系“体育MVP”（2023）</li>
+        <li data-i18n="h.6">首都高校瑜伽比赛个人/团体一等奖（2023–2024）</li>
+      </ul>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="card section" id="contact">
+      <h2 data-i18n="sec.contact">联系方式</h2>
+      <p><span class="nowrap">📧 xm-zhang22@mails.tsinghua.edu.cn</span>　|　<span class="nowrap">📱 155‑0366‑2819</span></p>
+      <p data-i18n="contact.desc">欢迎学术交流与项目合作（城市碳汇监测、遥感反演、AI生态建模、碳中和路径）。</p>
+    </section>
+
+    <footer class="muted">
+      © <span id="y"></span> <span data-i18n="footer.name">Zhang Xuemei</span> · <span data-i18n="footer.updated">最后更新</span>：<span id="d"></span>
+    </footer>
+  </main>
+
+  <script>
+    // 主题切换
+    const themeBtn = document.getElementById('toggleTheme');
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme){document.documentElement.setAttribute('data-theme', savedTheme)}
+    themeBtn.addEventListener('click', ()=>{
+      const now = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+      if(now){document.documentElement.setAttribute('data-theme', now)} else {document.documentElement.removeAttribute('data-theme')}
+      localStorage.setItem('theme', now);
+    });
+
+    // 年份与日期
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById('d').textContent = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+    // —— 简易中英双语切换（首版内容为中文；英文为要点翻译）——
+    const dict = {
+      en: {
+        'nav.about':'About','nav.research':'Research','nav.edu':'Education','nav.proj':'Projects','nav.pubs':'Publications','nav.patent':'Patent','nav.honors':'Honors','nav.contact':'Contact','ui.theme':'Theme',
+        'name':'Xuemei Zhang','title':'Ph.D. Candidate · Tsinghua University','dept':'Dept. of Earth System Science · Urban Carbon Cycle & AI Modeling',
+        'intro':'My research focuses on high‑resolution monitoring and assessment of urban carbon sinks. By integrating multi‑source remote sensing (satellite–UAV–flux tower–ground) with deep learning and large language models, I build AI‑enhanced data assimilation frameworks to support urban carbon neutrality and ecological governance.',
+        'btn.mail':'✉️ Email Me','btn.cv':'⬇️ Download CV (DOCX)','key':'Key Info','k.email':'Email','k.phone':'Phone','k.focus':'Focus','k.focus.val':'Urban carbon sink · RS inversion · Deep learning · LLM','k.lang':'Language','k.lang.val':'English CET‑6; IELTS 6.5','k.loc':'Location','k.loc.val':'Beijing · Shenzhen (collab) · Copenhagen (2025 visiting)',
+        'skills':'Skill Set','s.ai':'AI/ML: PyTorch, TensorFlow, Scikit‑learn, Hugging Face','s.models':'Models: CNN / LSTM / Transformer; i‑Tree Eco, CASA, LESS, BEPS, DART','s.rsgis':'RS/GIS: ArcGIS, ENVI, Lidar360, Google Earth Engine','s.code':'Coding: Python, R, MATLAB','links':'Links','l.scholar':'Google Scholar (to add)','l.rg':'ResearchGate (to add)',
+        'sec.research':'Research Highlights','r.1':'Built a satellite–UAV–tower–ground integrated observation system for urban carbon sinks.','r.2':'Used CNN/Transformer for fine estimation of tree height, canopy, and carbon stocks; combined with process models.','r.3':'Benchmarked GPU performance (A100/V100/RTX4090) for large models; used LLMs for parameter search and interpretation.','r.4':'Cross‑topic work on RECC and alternative stable states (ASS).',
+        'sec.edu':'Education','edu.tsinghua.name':'Tsinghua University · Dept. of Earth System Science','edu.tsinghua.degree':'Ph.D. in Ecology (candidate)','edu.tsinghua.desc':'Focus: urban carbon sink estimation, RS fusion, AI carbon cycle modeling; GPA 3.78; Advisor: Prof. Bing Xu.',
+        'edu.cph.name':'University of Copenhagen · Dept. of Geosciences and Natural Resource Management (IGN)','edu.cph.degree':'Visiting (Joint training)','edu.cph.desc':'With Prof. Martin Brandt: deep learning‑based urban carbon stock inversion and data assimilation.',
+        'edu.igsnrr.name':'IGSNRR, Chinese Academy of Sciences','edu.igsnrr.degree':'M.Sc. in Physical Geography','edu.igsnrr.desc':'RECC and ASS theory; Advisors: Desun Zhao & Guirui Yu; GPA 3.87.',
+        'edu.sxu.name':'Shanxi University','edu.sxu.degree':'B.Sc. in Geographical Science',
+        'sec.proj':'Projects & Practice','p.1.title':'National Key R&D Program (2022YFB3903703)','p.1.role':'Project secretary (Topic 3) & Sub‑topic 3.4 Lead','p.1.desc':'Coordinated plans and budget; 327 urban plots + UAV LiDAR in Shenzhen; DL‑based tree height/carbon stock; integrated observation system.',
+        'p.2.title':'Carbon Neutrality Practice · Tsinghua Academy for Advanced Engineering Practice','p.2.desc':'AI training & GPU benchmarking; LLM‑assisted data parsing and parameter auto‑tuning.',
+        'p.3.title':'RECC in Ecologically Fragile Areas','p.3.desc':'Resilience‑sphere model and quantitative evaluation; publications in CJAES and Science Press book.',
+        'p.4.title':'Second Tibetan Plateau Scientific Expedition','p.4.desc':'High‑altitude vegetation impact experiments; ecosystem stability mechanisms.',
+        'sec.pubs':'Publications & Book','pub.first':'First‑author (under review)','pub.a1':'Zhang X.M., Xu B., Brandt M., Wang W.M., et al. Urban vegetation ecosystem service assessment and multi‑scenario co‑benefit modeling: Shenzhen, China. Landscape and Urban Planning, 2025 (under review).',
+        'pub.rep':'Representative Papers','pub.r1':'Song H., Zhang X.M., et al. Seasonal tree height dynamics in Shenzhen using multi‑source RS. Journal of Remote Sensing, 2025.','pub.r2':'Yu G.R., Zhang X.M., et al. Scientific concept and ecological basis of RECC. Chinese Journal of Applied Ecology, 2022.','pub.r3':'Zhao D.S., Zhang X.M., et al. Evaluation theory and method of RECC. Chinese Journal of Applied Ecology, 2022.','pub.r4':'Zhao D.S., Zhang X.M. Review of alternative stable states theory in ecosystems. Acta Ecologica Sinica, 2021.','pub.r5':'Zhao D.S., …, Zhang X.M. Climate change impacts on MRFFLG projects. Acta Ecologica Sinica, 2019.','pub.book':'Book','pub.b1':'Guirui Yu et al., Zhang X.M. Impact of Global Change on RECC in Ecologically Fragile Areas. Science Press, 2023.','sec.patent':'Patent','pat.1':'Song Hang, Zhang Xuemei, Xu Bing. Instance segmentation of single trees via multi‑source RS and semi‑supervised learning. Patent appl. 2025100109, Tsinghua University, 2025.','sec.honors':'Honors & Activities','h.1':'Tsinghua Graduate Student Award – Sports Excellence (2024)','h.2':'Carbon Neutrality Practice – Second Prize (2024)','h.3':'Short‑term Overseas Study Fund (2024)','h.4':'ChinaFLUX Training – Excellent Trainee (2023)','h.5':'“Sports MVP”, Dept. of ESS, THU (2023)','h.6':'Beijing College Yoga – 1st Prize (Individual/Team, 2023–2024)','sec.contact':'Contact','contact.desc':'Open to collaboration: urban carbon monitoring, RS inversion, AI eco‑modeling, carbon neutrality pathways.','footer.name':'Zhang Xuemei','footer.updated':'Updated'}
+    };
+
+    const zhBtn = document.querySelector('.lang-btn[data-lang="zh"]');
+    const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+    function setLang(lang){
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      zhBtn.classList.toggle('active', lang==='zh');
+      enBtn.classList.toggle('active', lang==='en');
+      const map = dict[lang];
+      if(!map) return;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(map[key]) el.innerHTML = map[key];
+      });
+      localStorage.setItem('lang', lang);
+    }
+    zhBtn.addEventListener('click', ()=>setLang('zh'));
+    enBtn.addEventListener('click', ()=>setLang('en'));
+
+    // 初始化语言
+    setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>
