@@ -7,8 +7,8 @@
   <meta name="description" content="张雪梅（清华大学地球系统科学系博士研究生）个人学术主页：研究方向、论文、项目、专利、荣誉、联系方式。" />
   
   <!-- Favicon -->
-   <link rel="icon" type="image/png" href="favicon.png" />
-
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236d3df5'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='60' font-weight='bold' fill='white' text-anchor='middle'%3E张%3C/text%3E%3C/svg%3E" />
+  
   <style>
     /* —— 清华紫主题 + 完整信息排版优化 —— */
     :root {
@@ -82,6 +82,18 @@
     .lang-btn{padding:6px 10px;border-radius:10px;border:1px solid color-mix(in srgb, var(--text), var(--bg) 70%);background:transparent;color:var(--text);cursor:pointer}
     .lang-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
 
+    /* 页头Logo样式 */
+    .header-logo{display:flex;align-items:center;gap:12px;font-weight:600;font-size:18px;color:var(--brand)}
+    .header-logo img{height:40px;width:auto;object-fit:contain}
+    .logo-text{display:flex;flex-direction:column;line-height:1.2}
+    .logo-text .name{font-size:18px;font-weight:600;color:var(--text)}
+    .logo-text .dept{font-size:12px;color:var(--muted);font-weight:400}
+    @media(max-width:768px){
+      .header-logo img{height:32px}
+      .logo-text .name{font-size:16px}
+      .logo-text .dept{display:none}
+    }
+
     /* 论文列表样式增强 */
     .pub-list{list-style:none;padding:0}
     .pub-item{margin:16px 0;padding:14px;border-radius:12px;background:color-mix(in srgb, var(--brand), transparent 95%);border:1px solid color-mix(in srgb, var(--brand), transparent 85%)}
@@ -111,6 +123,15 @@
   <header>
     <div class="container">
       <nav>
+        <!-- 清华Logo -->
+        <div class="header-logo">
+          <img src="tsinghua-logo.png" alt="清华大学" />
+          <div class="logo-text">
+            <span class="name" data-i18n="header.name">张雪梅</span>
+            <span class="dept" data-i18n="header.dept">清华大学 · 地球系统科学系</span>
+          </div>
+        </div>
+        
         <div class="nav-links">
           <a data-i18n="nav.about" href="#about">关于我</a>
           <a data-i18n="nav.research" href="#research">研究方向</a>
@@ -516,6 +537,7 @@
     // —— 中英双语切换 ——
     const dict = {
       en: {
+        'header.name':'Xuemei Zhang','header.dept':'Tsinghua University · Dept. of Earth System Science',
         'nav.about':'About','nav.research':'Research','nav.edu':'Education','nav.proj':'Projects','nav.pubs':'Publications','nav.patent':'Patent','nav.honors':'Honors','nav.contact':'Contact','ui.theme':'Theme',
         'name':'Xuemei Zhang','title':'Ph.D. Candidate · Tsinghua University','dept':'Dept. of Earth System Science · Urban Carbon Cycle & AI Modeling',
         'intro':'My research focuses on high‐resolution monitoring and assessment of urban carbon sinks. By integrating multi‐source remote sensing (satellite–UAV–flux tower–ground) with deep learning and large language models, I build AI‐enhanced data assimilation frameworks to support urban carbon neutrality and ecological governance.',
